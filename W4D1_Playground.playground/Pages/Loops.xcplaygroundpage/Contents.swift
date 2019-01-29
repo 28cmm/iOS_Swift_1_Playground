@@ -35,12 +35,17 @@ for i in 2...5 {
  - Experiment:
   Use a ranged for loop to search through the 'pets' array above for the word 'pig' and print out its index.
  */
-
+let index = pets.firstIndex(of: "pig");
 
 /*:
  - Experiment:
  Create an array of random numbers of your choosing then make a for loop that adds 1 to each number.
  */
+var myArray = [2,3,5,1,2,6]
+for i in 0..<myArray.count {
+    myArray[i] = myArray[i] + 1
+}
+
 
 
 /*:
@@ -57,24 +62,35 @@ let interestingNumbers = [
     "Fibonacci": [1, 1, 2, 3, 5, 8],
     "Square": [1, 4, 9, 16, 25],
 ]
-var largest = 0
+var largest = interestingNumbers["Prime"]![1]
+var small = interestingNumbers["Prime"]![1]
 for (_, numbers) in interestingNumbers {
     for number in numbers {
         if number > largest {
             largest = number
         }
+        if (number < small){
+            small = number
+        }
     }
 }
 print(largest)
-
+print(small)
 
 /*:
  - Callout(Challenge):
  Given a number `N`, from 0 to `N`, add up all the odd numbers and print out the result.
  ie: N = 5, 1+3+5 = 9
  */
-
-
+let num = 5
+var sum = 0
+for i in 0...(num-1)/2{
+    sum = sum + (1+2*i)
+//    if(1+2*i == num){
+//        break;
+//    }
+}
+sum
 /*:
  - Callout(Challenge):
  Given the following array of numbers, determine the frequency of each number using a for loop.
@@ -89,5 +105,10 @@ print(largest)
  */
 
 let numberArray = [1, 4, 5, 5, 5, 3, 2, 1, 4, 2, 2, 2, 1]
+var count1 = 0;
+var count2 = 0;
+var count3 = 0;
+var count4 = 0;
+var count5 = 0;
 
 //: [Next](@next)

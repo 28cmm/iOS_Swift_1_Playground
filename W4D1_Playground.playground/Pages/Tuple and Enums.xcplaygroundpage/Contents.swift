@@ -23,13 +23,13 @@ namedPersonTuple.age
  - Experiment:
  Try creating your own tuple. Mix in different variable types and try mixing some parameters with names and some without. Does it still work?
  */
-
+var myTuple=("213",987,"wqefr")
 
 /*:
  - Experiment:
  Try nesting tuples within one another. Create a tuple and add a tuple as one of its items.
  */
-
+var myTTuple = (myTuple,214,35)
 
 /*:
  - Experiment:
@@ -41,9 +41,11 @@ let interestingNumbers = [
     "Fibonacci": [1, 1, 2, 3, 5, 8],
     "Square": [1, 4, 9, 16, 25],
 ]
-for (kind, numbers) in interestingNumbers {
-    
-}
+//for (kind, numbers) in interestingNumbers {
+//    for item in numbers{
+//        print(item)
+//    }
+//}
 
 /*:
  - Callout(Challenge):
@@ -53,7 +55,13 @@ To test: call your new function with eligable true and false, and print the two 
  (Hint: Use optional return value and conditional unwrapping)
  */
 
-
+func myTest(name:String, age:Int, Eligable:Bool)->(String?,Int?){
+    if(Eligable == true){
+        return (name,age)
+    }else{
+        return (nil,nil)
+    }
+}
 /*:
  ## Enums
  Enums are related values defined by the user. An example to think of this are the months within a year. There are only 12 months and when you are programming, you'll need a way to represent this. We could potentially use a String for each month, but that could lead to spelling mistakes. So instead, we can define our own values that makes it obvious to you.
@@ -63,18 +71,25 @@ To test: call your new function with eligable true and false, and print the two 
  */
 
 enum Months: Int{
-    case January = 1
-    case Feburary
-    case March
-    case April
+    case January=1
+    case Feburary=2
+    case March=3
+    case April=4
     case May, June, July, August
     //...
     
     func abbreviatedStringForm() -> String {
         switch self {
+        case .January:
+            return "Jan"
             default:
                 return ""
         }
+    }
+    func appart(num1:Int,num2:Int)->String{
+        let result = abs(num1 - num2)
+        let console = "\(num1) and \(num2) are \(result) apart"
+        return console
     }
 }
 
@@ -106,6 +121,58 @@ Try removing the '= 1' from the Months enum. Now what is different?
  - Callout(Challenge):
  Create enums for the game "Rock, Paper, Scissors". Create a function within the enum that compares two hand shapes and determines the winner. Then create a function that returns ✋ , ✌️, or 👊 given rock, paper, or scissors.
 */
+enum whichOne{
+    case Rock, Paper, Scissors
+    enum Result{
+        case win, lose, tie
+    }
+    
+    
+    func effective(against attack:whichOne)->Result{
+        switch (self,attack) {
+        case let(x, y) where x == y:
+            return .tie
+        case (.Paper,.Scissors),(.Scissors,.Rock),(.Rock,.Paper):
+            return .lose
+        default:
+            return .win
+        }
+    }
+}
 
+print(whichOne.Rock.effective(against: whichOne.Scissors))
+
+
+
+
+
+
+
+
+
+
+
+
+//enum Hand: Int {
+//    enum Result {
+//        case lose, tie, win
+//    }
+//
+//    case rock, paper, scissors, spock, lizzard
+//
+//    func result(against: Hand) -> Result {
+//        let distance = rawValue - against.rawValue
+//
+//        if distance == 0 { return .tie }
+//
+//        if distance % 2 == 0 {
+//            return (rawValue < against.rawValue) ? .win : .lose
+//        }
+//
+//        return (rawValue > against.rawValue) ? .win : .lose
+//    }
+//}
+//
+//print(Hand.rock.result(against: Hand.scissors))
 
 //: [Next](@next)

@@ -5,7 +5,7 @@
  
     `print("Hello, world!")`
  */
-
+print("Heelo, world!")
 /*:
  ## Variables
 
@@ -83,8 +83,9 @@ Values are never implicitly converted to another type. If you need to convert a 
 */
 
 let label = "The width is "
-let width = 94
+var width = 94
 let widthLabel = label + String(width)
+width = 67
 
 /*:
  - Experiment:
@@ -114,6 +115,9 @@ Volume of cylinder = pi * radius^2 * height
 /*:
  Hint: Make sure your radius is of type `Double`
  */
+let pi = 3.14
+var radius = Double(10)
+let area = pi * radius * radius
 
 /*:
  - Callout(Problem 2):
@@ -123,6 +127,11 @@ Volume of cylinder = pi * radius^2 * height
  Hint: Radius is half the length of the diameter
  */
 
+
+let CircumferenceOfCircle = 2 * pi * radius
+
+
+
 /*:
  - Callout(Problem 3):
  Find the volume of a cylinder with a radius of 5 metres and a height of 7 metres
@@ -130,6 +139,9 @@ Volume of cylinder = pi * radius^2 * height
 /*:
  Hint: You can double-check your answers yourself or on Google... Google has a really easy input mechanism for all three of these formulas if you just search them up.
  */
+let height = Double(7)
+radius = 5
 
+let VolumeOfCylinder = pi * radius * radius * height
 
 //: [Next](@next)

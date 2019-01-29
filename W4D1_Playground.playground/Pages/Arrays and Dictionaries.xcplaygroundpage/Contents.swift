@@ -19,20 +19,24 @@ myDictionary["Principal"] = 1
  - Experiment:
  Try creating an array and dictionary using `'let'` vs `'var'` then try adding something to them. What do you notice? For the array, you can use a method called 'append' to add something to it.
  */
+let myArray = [1,2,3]
 
 
 /*:
  - Experiment:
  Try creating an empty array with an explicit type `[type]`. What happens when you add a value that isn't the same type?
  */
-
-
+var myArray2 = [String]()
+myArray2.append("wrr")
+myArray2.append("21e")
+myArray2.append("3")
+myArray2.append("4")
 /*:
  - Experiment:
  Try creating an empty dictionary with an explicit type. `[keyType: valueType]`
  */
-
-
+var myDictionary1 = [String : Int]()
+myDictionary1["Principal"] = 1
 /*:
  - Experiment:
  Create an array with any values of your choice. Play around with accessing a value at a certain index. Then try playing with the following methods of an array and find out what they do:
@@ -43,6 +47,9 @@ myDictionary["Principal"] = 1
  - reverse
  - count
  */
+var myArrayReve = myArray2.reversed()
+
+
 
 
 /*:
@@ -60,7 +67,13 @@ myDictionary["Principal"] = 1
  
     Finally, print out each person's name from the array using their index and string interpolation
 */
-
+var nameArray = [String]()
+nameArray.append("John")
+nameArray.append("Karen")
+nameArray.append("Jane")
+for item in nameArray{
+    print("\(item)")
+}
 
 /*:
  - Callout(Challenge):
@@ -74,6 +87,8 @@ myDictionary["Principal"] = 1
  
     On the next line, add this last person's info: Bob - $45000
  */
-
+var priceDic = ["John":5000,"Jane":7000,"Karen":6200]
+priceDic["Bob"] = 45000
+priceDic
 
 //: [Next](@next)

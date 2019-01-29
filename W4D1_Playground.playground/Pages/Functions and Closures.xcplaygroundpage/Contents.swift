@@ -53,12 +53,27 @@ func sayHello(toPerson: String) -> String{
  Create four separate functions to add, subtract, multiple, and divide with two parameters given to it and returns a number result. Try testing each one afterwards.
  
  */
+let num1 = 20
+let num2 = 30
+func add(first:Int, second:Int)->Int{
+    return (first + second)
+}
+
+add(first:num1,second:num2)
 
 /*:
  - Callout(Challenge):
  Create your own 'reverse' function that takes in an array of Int, reverses the order of the array, and returns the newly reversed array of Int. The array class has its own 'reverse' method, but do not use it for this challenge.
  */
-
+let myArray = [1,2,3,4,5,6,7]
+func reverse(list:[Int])->[Int]{
+    var a = [Int]()
+    for item in list{
+        a.insert(item, at: 0)
+    }
+    return a;
+}
+reverse(list: myArray)
 /*:
  ## Closures
  
@@ -117,7 +132,8 @@ var sayHelloClosureWithReturn = { (name: String) -> String in
  - Experiment:
  Try calling all of the closures above. What do you notice that is different from calling a function?
  */
-
+sayHelloClosureWithReturn
+sayHelloClosureToPerson
 /*:
  - Experiment:
  Try creating your own closure that accepts two parameters of any type you choose. Have the closure print out the two parameters and test your closure.
@@ -133,3 +149,18 @@ var sayHelloClosureWithReturn = { (name: String) -> String in
  Create a closure with at least two parameters of your choice and decide whether or not it returns anything. Then create a function that takes in your closure as a parameter and one additional parameter of your choice.
  */
 //: [Next](@next)
+
+
+
+
+var helloClosure = {(name:String,age:Int)->String in
+    
+    
+    return name
+}
+func add(name:String, someClosure:(name:String,age:Int)){
+    print("\(name)")
+   
+}
+//add(name:helloClosure)
+
